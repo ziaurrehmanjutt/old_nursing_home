@@ -73,43 +73,43 @@ button {
 	z-index: 1;
 }
 .text-primary2{
-	color:#4dbc5d;
+	color:#6da041;
 }
 .bg1{
 	background:#052b17;
 }
 .bg2{
-	background: #4dbc5d; 
-	background: -moz-linear-gradient(bottom,  #4dbc5d 0%, #00a694 100%); 
-	background: -webkit-linear-gradient(bottom,  #4dbc5d 0%,#00a694 100%); 
-	background: linear-gradient(to bottom,  #4dbc5d 0%,#00a694 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dbc5d', endColorstr='#00a694',GradientType=1 );
+	background: #6da041; 
+	background: -moz-linear-gradient(bottom,  #6da041 0%, #81df67 100%); 
+	background: -webkit-linear-gradient(bottom,  #6da041 0%,#81df67 100%); 
+	background: linear-gradient(to bottom,  #6da041 0%,#81df67 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6da041', endColorstr='#81df67',GradientType=1 );
 	transition: all 0.4s;
 }
 .btn-primary2{
 	background: #4dbc5d; 
-	background: -moz-linear-gradient(left,  #4dbc5d 0%, #00a694 100%); 
-	background: -webkit-linear-gradient(left,  #4dbc5d 0%,#00a694 100%); 
-	background: linear-gradient(to right,  #4dbc5d 0%,#00a694 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dbc5d', endColorstr='#00a694',GradientType=1 );
+	background: -moz-linear-gradient(left,  #6da041 0%, #81df67 100%); 
+	background: -webkit-linear-gradient(left,  #6da041 0%,#81df67 100%); 
+	background: linear-gradient(to right,  #6da041 0%,#81df67 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6da041', endColorstr='#81df67',GradientType=1 );
 	transition: all 0.4s;
 }
 .btn-primary2:hover, .btn-primary2:active, .btn-primary2:focus{
 	background: #00a694; 
-	background: -moz-linear-gradient(left,  #00a694 0%, #4dbc5d 100%);
-	background: -webkit-linear-gradient(left,  #00a694 0%,#4dbc5d 100%);
-	background: linear-gradient(to right,  #00a694 0%,#4dbc5d 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a694', endColorstr='#4dbc5d',GradientType=1 );	
+	background: -moz-linear-gradient(left,  #81df67 0%, #6da041 100%);
+	background: -webkit-linear-gradient(left,  #81df67 0%,#6da041 100%);
+	background: linear-gradient(to right,  #81df67 0%,#6da041 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81df67', endColorstr='#6da041',GradientType=1 );	
 	transition: all 0.4s;
 	border-color:#4dbc5d;
 }
 .btn-outline-primary2{
-	border-color:#4dbc5d;
-	color:#4dbc5d;
+	border-color:#6da041;
+	color:#6da041;
 }
 .btn-outline-primary2:hover, .btn-outline-primary2:active, .btn-outline-primary2:focus{
-	border-color:#00a694;
-	background:#00a694;
+	border-color:#4dbc5d;
+	background:#4dbc5d;
 	color:#FFF;
 }
 .line-height1{
@@ -123,7 +123,7 @@ button {
 }
 /***************************** Default CSS Ends Here *****************************/
 header{
-	min-height: 84px;
+	min-height: 67px;
 }
 header nav{
 	position: fixed !important;
@@ -170,12 +170,11 @@ header nav li.dropdown ul.dropdown-menu a:hover, header nav li.dropdown ul.dropd
 	bottom: -20px;
 }
 .home-banner i.mm{
-	
 	background: #4dbc5d; 
-	background: -moz-linear-gradient(left,  #4dbc5d 0%, #00a694 100%); 
-	background: -webkit-linear-gradient(left,  #4dbc5d 0%,#00a694 100%); 
-	background: linear-gradient(to right,  #4dbc5d 0%,#00a694 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dbc5d', endColorstr='#00a694',GradientType=1 );
+	background: -moz-linear-gradient(left,  #6da041 0%, #81df67 100%); 
+	background: -webkit-linear-gradient(left,  #6da041 0%,#81df67 100%); 
+	background: linear-gradient(to right,  #6da041 0%,#81df67 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6da041', endColorstr='#81df67',GradientType=1 );
 }
 .services a{
 	width:180px;
@@ -183,8 +182,8 @@ header nav li.dropdown ul.dropdown-menu a:hover, header nav li.dropdown ul.dropd
 	transition: all 0.4s;
 }
 .services a:hover, .services a:active, .services a:focus{
-	border-color:#4dbc5d !important;
-	color:#4dbc5d !important;
+	border-color:#6da041 !important;
+	color:#6da041 !important;
 }
 .services a:hover img, .services a:active img, .services a:focus img{
 	transform: scale(0.9);
@@ -208,8 +207,8 @@ header nav li.dropdown ul.dropdown-menu a:hover, header nav li.dropdown ul.dropd
 footer ul li a{
 	color:#FFF;
 }
-footer ul li a:hover, footer ul li a:active, footer ul li a:focus{
-	color:#4dbc5d;
+footer ul li a:hover, footer ul li a:active, footer ul li a:focus, footer ul li.active a{
+	color:#6da041;
 }
 footer .col-12 small{
 	font-size:11px;

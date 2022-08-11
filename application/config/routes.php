@@ -24,5 +24,8 @@ $route['covid-19'] = 'Injuries_Controller/covid_19';
 $route['other'] = 'Injuries_Controller/other';
 
 
+$route['import'] = 'Import/index';
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
