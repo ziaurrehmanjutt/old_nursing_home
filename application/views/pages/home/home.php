@@ -73,13 +73,7 @@
 
                 <form method="POST" action="<?=base_url('details')?>">
                     <div class="modal-body">
-                        <div class="mb-3">
-                            <label>
-                                <input type="checkbox" />
-                                Negligence
-                            </label>
-                        </div>
-
+                        <div class="mb-3"> <label><input name="Negligence" type="checkbox" />Negligence </label></div>
                         <div class="mb-3"><label> <input name="Pressure_Ulcers" type="checkbox" /> Pressure Ulcers </label></div>
                         <div class="mb-3"><label> <input name="Sexual_Assault" type="checkbox" /> Sexual Assault </label></div>
                         <div class="mb-3"><label> <input name="Medication_Errors" type="checkbox" /> Medication Errors </label></div>

@@ -4,11 +4,11 @@
             <div class="col-lg-3 col-md-1"></div>
             <div class="col-lg-6 col-md-10 text-center text-white">
                 <h1 class="h1 fw-bold animate__animated animate__fadeInDown mb-3">
-                    <?=$data->provider_name?>
+                    <?= $data->provider_name ?>
                 </h1>
 
                 <p>
-                <?=$data->provider_address?>
+                    <?= $data->provider_address ?>
                 </p>
             </div>
             <div class="col-lg-3 col-md-1"></div>
@@ -17,7 +17,7 @@
 </section>
 
 <section>
-    <div>
+    <div style="width: 80%;margin: 90px auto;">
         <table class="table">
             <tr>
                 <th>Type of Injury</th>
@@ -25,14 +25,26 @@
                 <th>High Valuation</th>
                 <th>Average</th>
             </tr>
-            <?php foreach ($points  as $key => $value) { ?>
+            <?php
+            $allT = 0;
+            foreach ($points  as $key => $value) {
+                $mid = ($value['low'] + $value['high']) / 2;
+                $allT += $mid;
+            ?>
                 <tr>
-                    <td><?=$value['name']?></td>
-                    <th><?=$value['low']?></th>
-                    <th><?=$value['high']?></th>
-                    <th></th>
-            </tr>
+                    <td>$ <?= $value['name'] ?></td>
+                    <td>$ <?= number_format($value['low']) ?></td>
+                    <td>$ <?= number_format($value['high']) ?></td>
+                    <td>$ <?= number_format($mid) ?> </td>
+                </tr>
             <?php } ?>
+
+            <tr>
+                <th>Total</th>
+                <td></td>
+                <td></td>
+                <th>$ <?= number_format($allT) ?></th>
+            </tr>
         </table>
     </div>
 </section>

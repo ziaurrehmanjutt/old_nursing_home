@@ -30,6 +30,14 @@ class Home_Controller extends Base_Controller {
 			// print_r($_POST);
 			// die;
 			$allPoints  = [];
+			if(isset($_POST['Negligence'])){
+				$z = array(
+					"name" => "Negligence",
+					"low" => 125000 ,
+					"high" => 10000000 ,
+				);
+				$allPoints[] = $z;
+			}
 			if(isset($_POST['Pressure_Ulcers'])){
 				$z = array(
 					"name" => "Pressure Ulcers",
@@ -60,8 +68,83 @@ class Home_Controller extends Base_Controller {
 			if(isset($_POST['Premature_Death'])){
 				$z = array(
 					"name" => "Premature Death",
-					"low" => 25000,
-					"high" => 500000,
+					"low" => 65000,
+					"high" => 1250000,
+				);
+				$allPoints[] = $z;
+			}
+
+			if(isset($_POST['Bed_Rail_Entrapment'])){
+				$z = array(
+					"name" => "Bed Rail Entrapment",
+					"low" => 12500,
+					"high" => 45000,
+				);
+				$allPoints[] = $z;
+			}
+
+			if(isset($_POST['Covid_19'])){
+				$z = array(
+					"name" => "Covid-19",
+					"low" => 0,
+					"high" => 0,
+				);
+				$allPoints[] = $z;
+			}
+			if(isset($_POST['Slips_Falls'])){
+				$z = array(
+					"name" => "Slips & Falls",
+					"low" => 150000,
+					"high" => 10000000,
+				);
+				$allPoints[] = $z;
+			}
+			if(isset($_POST['Elopements'])){
+				$z = array(
+					"name" => "Elopements",
+					"low" => 125000,
+					"high" => 550000,
+				);
+				$allPoints[] = $z;
+			}
+			if(isset($_POST['Fractures'])){
+				$z = array(
+					"name" => "Fractures",
+					"low" =>  95000,
+					"high" => 950000,
+				);
+				$allPoints[] = $z;
+			}
+			if(isset($_POST['Weight_Malnutrition'])){
+				$z = array(
+					"name" => "Weight Loss or Malnutrition",
+					"low" =>  35000,
+					"high" => 250000,
+				);
+				$allPoints[] = $z;
+			}
+			if(isset($_POST['Neglect'])){
+				$z = array(
+					"name" => "Neglect",
+					"low" =>  150000,
+					"high" => 1000000,
+				);
+				$allPoints[] = $z;
+			}
+			if(isset($_POST['Choking'])){
+				$z = array(
+					"name" => "Neglect",
+					"low" =>  50000,
+					"high" => 40000,
+				);
+				$allPoints[] = $z;
+			}
+
+			if(isset($_POST['Other'])){
+				$z = array(
+					"name" => "Other",
+					"low" =>  0,
+					"high" => 0,
 				);
 				$allPoints[] = $z;
 			}
@@ -93,6 +176,7 @@ class Home_Controller extends Base_Controller {
 	public function ajax_detail($id)
 	{
 		$data['data'] = $this->Home_Model->get_detail($id);
+		$data['vaccination'] = $this->Home_Model->get_vaccination($id);
 		echo $this->load->view('pages/home/show_model.php',$data,TRUE);
 		// $this->render_view('pages/about/terms.php');
 	} 

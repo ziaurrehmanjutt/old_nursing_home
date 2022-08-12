@@ -20,4 +20,14 @@ class Home_Model extends CI_Model{
         return $this->db->get()->row();
         // $this->db->insert_batch('all_provider_data', $data);  
     }
+
+    function get_vaccination($id){
+        $this->db->select('covid_vaccination_rates.*');  
+        $this->db->from('all_provider_data,covid_vaccination_rates'); 
+        $this->db->where('all_provider_data.rowid',$id); 
+        $this->db->where('covid_vaccination_rates.fedral_provider_number = federal_provider_number'); 
+        return $this->db->get()->row();
+        // $this->db->insert_batch('all_provider_data', $data);  
+    }
+
 }

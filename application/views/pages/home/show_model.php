@@ -22,7 +22,7 @@
     ?>
     <div class="row" style="text-align: center;">
         <div class="col-sm-3">
-            Overall Ratting
+            Overall Ratting(<?=$overAll?>)
 
             <div>
                 <?php
@@ -58,7 +58,7 @@
                     print '<span class="fa fa-star checked"></span>';
                 }
 
-                if ($overAll <= 3) {
+                if ($overAll <= 4) {
                     print '<span class="fa fa-star-o"></span>';
                 } else if ($overAll > 4 && $overAll < 5) {
                     print '<span class="fa fa-star-half-o"></span>';
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            Health inspections
+            Health inspections(<?=$healthInspection?>)
             <div>
                 <?php
                 if ($healthInspection == 0) {
@@ -104,7 +104,7 @@
                     print '<span class="fa fa-star checked"></span>';
                 }
 
-                if ($healthInspection <= 3) {
+                if ($healthInspection <= 4) {
                     print '<span class="fa fa-star-o"></span>';
                 } else if ($healthInspection > 4 && $healthInspection < 5) {
                     print '<span class="fa fa-star-half-o"></span>';
@@ -115,7 +115,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            Staffing
+            Staffing(<?=$staffing?>)
             <div>
                 <?php
                 if ($staffing == 0) {
@@ -150,7 +150,7 @@
                     print '<span class="fa fa-star checked"></span>';
                 }
 
-                if ($staffing <= 3) {
+                if ($staffing <= 4) {
                     print '<span class="fa fa-star-o"></span>';
                 } else if ($staffing > 4 && $staffing < 5) {
                     print '<span class="fa fa-star-half-o"></span>';
@@ -162,7 +162,7 @@
         </div>
 
         <div class="col-sm-3">
-            Quality measures
+            Quality measures(<?=$qm_ratting?>)
             <div>
                 <?php
                 if ($qm_ratting == 0) {
@@ -197,7 +197,7 @@
                     print '<span class="fa fa-star checked"></span>';
                 }
 
-                if ($qm_ratting <= 3) {
+                if ($qm_ratting <= 4) {
                     print '<span class="fa fa-star-o"></span>';
                 } else if ($qm_ratting > 4 && $qm_ratting < 5) {
                     print '<span class="fa fa-star-half-o"></span>';
@@ -212,7 +212,7 @@
 
 
 
-    <div class="progress">
+    <div class="progress" style="    margin: 20px;">
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-<?= $pType ?>" role="progressbar" aria-valuenow="<?= $totalRatings * 5 ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $totalRatings * 5 ?>%"></div>
     </div>
 
@@ -235,20 +235,41 @@
     <?php endif; ?>
 </div>
 <div class="modal-footer">
-        <table class="table">
-            <tr>
-                <th>vaccination rate</th>
-                <td>12%</td>
 
-                <th>penalties</th>
-                <td>5252$</td>
-            </tr>
+        <div class="row">
+            <div class="col-sm-3">
+                <div style="text-align: center;">
+                    <span><?=$vaccination->percent_vacc_resident?>%</span>
+                    <p><small>Vaccinated Residents</small></p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div style="text-align: center;">
+                    <span><?=$vaccination->percent_vacc_healthcare?>%</span>
+                    <p> <small>Vaccinated Healthcare Personnel</small></p>
+                </div>
+            </div><div class="col-sm-3">
+                <div style="text-align: center;">
+                    <span><?=$vaccination->percent_full_vacc_resident?>%</span>
+                    <p> <small>Fully Vaccinated Residents who Received a Booster Dose</small></p>
+                </div>
+            </div><div class="col-sm-3">
+                <div style="text-align: center;">
+                    <span><?=$vaccination->percent_full_vaccinated?>%</span>
+                    <p><small>Fully Vaccinated Staff who Received a Booster Dose</small></p>
+                </div>
+            </div>
+        </div>
+
+        <hr style="width: 100%;">
+        <table class="table">
+   
             <tr>
                 <th>ownership type</th>
-                <td>SELF JOIN</td>
+                <td><?=$data->ownership_type?></td>
 
-                <!-- <th>Address</th>
-                <td></td> -->
+                <th>penalties</th>
+                <td><?=$data->penalities?>$</td>
             </tr>
 
             <tr>
@@ -261,10 +282,10 @@
 
             <tr>
                 <th>ZIP</th>
-                <td>33</td>
+                <td><?=$data->provider_zip?></td>
 
                 <th>Mobile</th>
-                <td>333333333</td>
+                <td><a href="tel:(<?=$data->phone_number?>) <?=$data->phone_number_code?> "> (<?=$data->phone_number_code?>) <?=$data->phone_number?> </a></td>
             </tr>
 
         </table>
