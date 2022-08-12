@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <section class="home-banner position-relative"><i class="position-absolute top-0 bottom-0 start-0 end-0 opacity-75 mm"></i>
     <div class="container">
         <div class="row position-relative z-index">
@@ -32,7 +33,7 @@
         <h2>All Search Result</h2>
 
         <?php foreach ($data as $key => $value) { ?>
-            <div onclick="showModel(1)" class="row" style="border: 1px solid #9e9e9e;margin: 30px 10%;padding: 20px;border-radius: 10px;box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);">
+            <div onclick="showModel(<?= $value['rowid'] ?>)" class="row" style="border: 1px solid #9e9e9e;margin: 30px 10%;padding: 20px;border-radius: 10px;box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);">
                 <div class="col-md-8" style="text-align: center;">
                     <a>
                         <h3><?= $value['provider_name'] ?></h3>
@@ -53,46 +54,57 @@
 
     <div class="modal fade" id="modelDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
+            <div class="modal-content" id="all_model_data">
 
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Overall Ratting
-                        </div>
-                        <div class="col-sm-4">
-                        	Health inspections
-                        </div>
-                        <div class="col-sm-4">
-                        	Staffing
-                        </div>
-
-                        <div class="col-sm-4">
-                        	Staffing
-                        </div>
-                        
-                    </div>
-
-
-
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div>
             </div>
         </div>
     </div>
+
+
+
+    <!-- Show Model -->
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalToggleLabel2">Tell us what kind of injury the nursing home caused for a valuation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form method="POST" action="<?=base_url('details')?>">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label>
+                                <input type="checkbox" />
+                                Negligence
+                            </label>
+                        </div>
+
+                        <div class="mb-3"><label> <input name="Pressure_Ulcers" type="checkbox" /> Pressure Ulcers </label></div>
+                        <div class="mb-3"><label> <input name="Sexual_Assault" type="checkbox" /> Sexual Assault </label></div>
+                        <div class="mb-3"><label> <input name="Medication_Errors" type="checkbox" /> Medication Errors </label></div>
+                        <div class="mb-3"><label> <input name="Premature_Death" type="checkbox" /> Premature Death </label></div>
+                        <div class="mb-3"><label> <input name="Bed_Rail_Entrapment" type="checkbox" /> Bed Rail Entrapment </label></div>
+                        <div class="mb-3"><label> <input name="Covid_19" type="checkbox" /> Covid-19 </label></div>
+                        <div class="mb-3"><label> <input name="Slips_Falls" type="checkbox" /> Slips & Falls </label></div>
+                        <div class="mb-3"><label> <input name="Elopements" type="checkbox" /> Elopements</label></div>
+                        <div class="mb-3"><label> <input name="Fractures" type="checkbox" /> Fractures</label></div>
+                        <div class="mb-3"><label> <input name="Weight_Malnutrition" type="checkbox" /> Weight Loss or Malnutrition</label></div>
+                        <div class="mb-3"><label> <input name="Neglect" type="checkbox" /> Neglect</label></div>
+                        <div class="mb-3"><label> <input name="Choking" type="checkbox" /> Choking</label></div>
+                        <div class="mb-3"><label> <input name="Other" type="checkbox" /> Other</label></div>
+
+                    </div>
+                    <input type="hidden" name="current_id" id="current_id"/>
+                    <div class="modal-footer">
+                        <button name="submit_row" class="btn btn-primary">Calculate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  <!-- Show Model -->
+
 
 <?php endif;  ?>
 <section class="services py-5">

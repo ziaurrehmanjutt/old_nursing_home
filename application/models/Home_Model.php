@@ -12,4 +12,12 @@ class Home_Model extends CI_Model{
         return $this->db->get()->result_array();
         // $this->db->insert_batch('all_provider_data', $data);  
     }
+
+    function get_detail($id){
+        $this->db->select('*');  
+        $this->db->from('all_provider_data'); 
+        $this->db->where('rowid',$id); 
+        return $this->db->get()->row();
+        // $this->db->insert_batch('all_provider_data', $data);  
+    }
 }
