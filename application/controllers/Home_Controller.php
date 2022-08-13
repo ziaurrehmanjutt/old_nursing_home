@@ -180,4 +180,38 @@ class Home_Controller extends Base_Controller {
 		echo $this->load->view('pages/home/show_model.php',$data,TRUE);
 		// $this->render_view('pages/about/terms.php');
 	} 
-}
+
+	public function sendEmail(){
+
+		if(isset($_POST['submit_row'])){
+			$data['data'] = $_POST;
+			$message =  $this->load->view('pages/template/email.php',$data,TRUE);
+
+			$config['charset'] = 'utf-8';
+			$config['mailtype'] = 'html';
+			$this->load->library('email', $config);
+
+			// echo $message;
+			// die;
+			$senMail = "ziaa520@gmail.com";
+
+			$this->email->from('info@irfanrashid.com', 'Nursing Home Data');
+			$this->email->to($senMail);
+			$this->email->cc($_POST['email']);
+ 
+
+			$this->email->subject('Order Detail Subject');
+			$this->email->message($message);
+			if ($this->email->send()) {
+				$this->session->set_flashdata('email_sent', 'SUCCESS');
+			} else {
+				$this->session->set_flashdata('email_sent', 'ERROR');
+			}
+
+			redirect('/');
+		}else{
+			redirect('/');
+		}
+
+	} 
+} 

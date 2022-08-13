@@ -7,6 +7,7 @@ $route['about-us'] = 'Home_Controller/about_us';
 $route['contact-us'] = 'Home_Controller/contact_us';
 $route['terms-disclaimer'] = 'Home_Controller/terms';
 $route['details'] = 'Home_Controller/details';
+$route['sendEmail'] = 'Home_Controller/sendEmail';
 
 $route['injuries'] = 'Injuries_Controller/injuries';
 $route['negligence'] = 'Injuries_Controller/negligence';
