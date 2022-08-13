@@ -12,9 +12,15 @@ class Home_Controller extends Base_Controller {
 	public function index()
 	{
 		$data['isSearch'] = false;
+		$data['textSearch'] = '';
+		$data['zipSearch'] = '';
 		if(isset($_GET['search'])){
 			$zip = isset($_GET['zip']) && $_GET['zip'] ? $_GET['zip'] : '';
 			$text = isset($_GET['text']) && $_GET['text'] ? $_GET['text'] : '';
+
+			$data['textSearch'] = $text;
+			$data['zipSearch'] = $zip;
+
 			if($zip || $text){
 				$data['isSearch'] = true;
 				$data['data'] = $this->Home_Model->search_data($text,$zip);

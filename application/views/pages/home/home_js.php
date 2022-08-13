@@ -18,4 +18,12 @@
         $('#current_id').val(id);
     }
 
+    function doSearch(){
+        if(!$('#zipInput').val() && !$('#textInput').val()){
+            event.preventDefault();
+            return false;
+        }
+    }
+
+    document.getElementById('search-result').scrollIntoView();
 </script>

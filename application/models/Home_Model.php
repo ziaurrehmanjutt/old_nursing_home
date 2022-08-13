@@ -8,7 +8,7 @@ class Home_Model extends CI_Model{
         $this->db->like('provider_name', $text);
         if($zip)
         $this->db->like('provider_zip', $zip);
-        $this->db->limit(10);
+        $this->db->limit(9);
         return $this->db->get()->result_array();
         // $this->db->insert_batch('all_provider_data', $data);  
     }
