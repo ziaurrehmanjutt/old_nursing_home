@@ -26,6 +26,7 @@ $route['covid-19'] = 'Injuries_Controller/covid_19';
 $route['other'] = 'Injuries_Controller/other';
 
 $route['ajax/detail/(:num)'] = 'Home_Controller/ajax_detail/$1';
+$route['ajax/search'] = 'Home_Controller/ajax_search';
 
 
 $route['import'] = 'Import/index';

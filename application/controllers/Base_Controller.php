@@ -12,8 +12,8 @@ class Base_Controller extends CI_Controller {
 	{
 		$this->load->view('include/header.php');
 		$this->load->view($page,$data);
+		$this->load->view('include/footer.php');
 		if($jsFile)
 		$this->load->view($jsFile);
-		$this->load->view('include/footer.php');
 	}
 }

@@ -14,17 +14,21 @@ class Home_Controller extends Base_Controller {
 		$data['isSearch'] = false;
 		$data['textSearch'] = '';
 		$data['zipSearch'] = '';
+		$data['page'] = 1;
 		if(isset($_GET['search'])){
 			$zip = isset($_GET['zip']) && $_GET['zip'] ? $_GET['zip'] : '';
 			$text = isset($_GET['text']) && $_GET['text'] ? $_GET['text'] : '';
+			$page = isset($_GET['page']) && $_GET['page'] ? $_GET['page'] : 1;
 
 			$data['textSearch'] = $text;
 			$data['zipSearch'] = $zip;
 
+			$data['page'] = $page;
 			if($zip || $text){
 				$data['isSearch'] = true;
-				$data['data'] = $this->Home_Model->search_data($text,$zip);
-			}
+				$data['data'] = $this->Home_Model->search_data($text,$zip,$page);
+				$data['count'] = $this->Home_Model->get_total_count($text,$zip);
+			} 
 		}
 		
 		$this->render_view('pages/home/home.php',$data,'pages/home/home_js');
@@ -169,6 +173,7 @@ class Home_Controller extends Base_Controller {
 	}
 
 
+
 	//
 	public function contact_us()
 	{
@@ -186,6 +191,23 @@ class Home_Controller extends Base_Controller {
 		echo $this->load->view('pages/home/show_model.php',$data,TRUE);
 		// $this->render_view('pages/about/terms.php');
 	} 
+
+	public function ajax_search() 
+	{
+			$zip = isset($_GET['zip']) && $_GET['zip'] ? $_GET['zip'] : '';
+			$text = isset($_GET['text']) && $_GET['text'] ? $_GET['text'] : '';
+			$page = isset($_GET['page']) && $_GET['page'] ? $_GET['page'] : 1;
+
+			$data['textSearch'] = $text;
+			$data['zipSearch'] = $zip;
+			$data['page'] = $page;
+
+			$data['isSearch'] = true;
+			$data['data'] = $this->Home_Model->search_data($text,$zip,$page);
+			$data['count'] = $this->Home_Model->get_total_count($text,$zip);
+			echo $this->load->view('pages/home/ajax_search_result.php',$data,TRUE);
+
+	}
 
 	public function sendEmail(){
 
