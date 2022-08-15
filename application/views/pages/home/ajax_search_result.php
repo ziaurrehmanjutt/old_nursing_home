@@ -38,8 +38,10 @@
                 </button>
               <?php } ?> -->
 
+
+
               <button class="btn btn-primary" name="page" value="<?= $page-1?>" <?= $page == 1 ? "disabled" : "" ?>>Previous</button>
-              <button class="btn btn-primary"  name="page" value="<?= $page+1?>" <?= $page == ($count / 9) ? "disabled" : "" ?>  >Next</button>
+              <button class="btn btn-primary"  name="page" value="<?= $page+1?>" <?= $page+1 > ($count / 9) ? "disabled" : "" ?>  >Next</button>
 
             </form>
           <?php endif  ?>

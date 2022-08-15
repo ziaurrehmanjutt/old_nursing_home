@@ -20,7 +20,7 @@
                 <input type="text" name="zip" value="<?= $zipSearch ?>" id="zipInput" class="form-control p-3" placeholder="Zip Code" />
               </div>
               <div class="col-md-4">
-                <button onclick="doSearch()" name="search" type="button" value="home" class="btn btn-primary2 w-100 p-3 text-white"><i class="fa fa-search"></i> SEARCH</button>
+                <button onclick="doSearch()" id="searchBtn" name="search" type="button" value="home" class="btn btn-primary2 w-100 p-3 text-white"><i class="fa fa-search"></i> SEARCH</button>
               </div>
             </div>
           </div>
@@ -66,11 +66,14 @@
               <input type="hidden" value="<?= $zipSearch ?>" name="zip" />
 
               <?php for ($i = 0; $i < ($count / 9); $i++) {  ?>
-                <button <?= $page == ($i + 1) ? "disabled" : "" ?> name="page" value="<?= $i + 1 ?>" class="btn rounded">
+                <!-- <button <?= $page == ($i + 1) ? "disabled" : "" ?> name="page" value="<?= $i + 1 ?>" class="btn rounded">
                   <?= $i + 1 ?>
-                </button>
+                </button> -->
               <?php } ?>
 
+
+              <button class="btn btn-primary" name="page" value="<?= $page-1?>" <?= $page == 1 ? "disabled" : "" ?>>Previous</button>
+              <button class="btn btn-primary"  name="page" value="<?= $page+1?>" <?= $page+1 > ($count / 9) ? "disabled" : "" ?>  >Next</button>
             </form>
           <?php endif  ?>
         </div>

@@ -52,7 +52,7 @@
             ajaxLoad()
         });
 
-        $("#other").click(function() {
+        $("#searchBtn").click(function() {
             ajaxLoad()
         });
 
