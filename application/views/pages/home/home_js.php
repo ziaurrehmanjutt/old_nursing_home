@@ -18,6 +18,11 @@
         $('#current_id').val(id);
     }
 
+    function showContactUs(){
+        var myModal = new bootstrap.Modal(document.getElementById('frmContactUs'), {});
+        myModal.show();
+    }
+
     function doSearch() {
         if (!$('#zipInput').val() && !$('#textInput').val()) {
             event.preventDefault();

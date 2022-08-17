@@ -160,7 +160,9 @@ class Home_Controller extends Base_Controller {
 			}
 
 			$id = $_POST['current_id'];
+
 			$data['data'] = $this->Home_Model->get_detail($id);
+			// $this->sendEmail($allPoints,$data['data']);
 			$data['points'] = $allPoints;
 			$this->render_view('pages/home/detail_view.php',$data);
 		}else{
@@ -209,37 +211,35 @@ class Home_Controller extends Base_Controller {
 
 	}
 
-	public function sendEmail(){
+	public function sendEmail($injuries,$detail){
 
-		if(isset($_POST['submit_row'])){
-			$data['data'] = $_POST;
-			$message =  $this->load->view('pages/template/email.php',$data,TRUE);
+		// echo "<pre>";
+		// print_r($data);
+		// die;
+		$data['data'] = $_POST;
+		$data['detail'] = $detail;
+		$data['injuries'] = $injuries;
+		$message =  $this->load->view('pages/template/email.php',$data,TRUE);
 
-			$config['charset'] = 'utf-8';
-			$config['mailtype'] = 'html';
-			$this->load->library('email', $config);
+		$config['charset'] = 'utf-8';
+		$config['mailtype'] = 'html';
+		$this->load->library('email', $config);
 
-			// echo $message;
-			// die;
-			$senMail = "ziaa520@gmail.com";
+		// echo $message;
+		// die;
+		$senMail = "ziaa520@gmail.com";
 
-			$this->email->from('info@irfanrashid.com', 'Nursing Home Data');
-			$this->email->to($senMail);
-			$this->email->cc($_POST['email']);
- 
+		$this->email->from('info@irfanrashid.com', 'Nursing Home Data');
+		$this->email->to($senMail);
+		$this->email->cc($_POST['email']);
 
-			$this->email->subject('Order Detail Subject');
-			$this->email->message($message);
-			if ($this->email->send()) {
-				$this->session->set_flashdata('email_sent', 'SUCCESS');
-			} else {
-				$this->session->set_flashdata('email_sent', 'ERROR');
-			}
 
-			redirect('/');
-		}else{
-			redirect('/');
+		$this->email->subject('Order Detail Subject');
+		$this->email->message($message);
+		if ($this->email->send()) {
+			$this->session->set_flashdata('email_sent', 'SUCCESS');
+		} else {
+			$this->session->set_flashdata('email_sent', 'ERROR');
 		}
-
 	} 
 } 

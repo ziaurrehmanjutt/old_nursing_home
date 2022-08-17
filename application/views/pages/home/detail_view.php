@@ -56,7 +56,7 @@
     </div>
   </div>
 </section>
-<section class="about py-md-5 bg-light">
+<!-- <section class="about py-md-5 bg-light">
   <div class="container py-5">
     <div class="row align-items-center">
       <div class="col-12 animate__animated animate__fadeInDown text-center">
@@ -97,4 +97,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->

@@ -105,8 +105,8 @@
                                             <tr>
                                                 <td width="5%" align="center" style="text-align: center;"></td>
                                                 <td width="90%" align="center" style="text-align: left;color:#66656f;font-size:16px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;width:90%;">
-                                                    <p style="color:#FFF;font-size:25px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;"><?=$data['name_snf']?><br>
-                                                        <small style="color:#FFF;font-size:14px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:400;"><?=$data['address']?></small>
+                                                    <p style="color:#FFF;font-size:25px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;"><?=$detail->provider_name?><br>
+                                                        <small style="color:#FFF;font-size:14px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:400;"><?=$detail->provider_address?></small>
                                                     </p>
                                                 </td>
                                                 <td width="5%" align="center" style="text-align: center;"></td>
@@ -132,7 +132,7 @@
                                                                     <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:400;text-align: left;">Name</p>
                                                                 </td>
                                                                 <td style="background: #FFF;" width="45%">
-                                                                    <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;text-align: right;"><?=$data['name']?></p>
+                                                                    <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;text-align: right;"><?=$data['contact_name']?></p>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -163,7 +163,7 @@
                                                                     <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:400;text-align: left;">Telephone Number</p>
                                                                 </td>
                                                                 <td style="background: #FFF;" width="45%">
-                                                                    <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;text-align: right;"><?=$data['mobile']?></p>
+                                                                    <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;text-align: right;"><?=$data['contact_number']?></p>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -194,7 +194,7 @@
                                                                     <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:400;text-align: left;">Email</p>
                                                                 </td>
                                                                 <td style="background: #FFF;" width="45%">
-                                                                    <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;text-align: right;"><?=$data['email']?></p>
+                                                                    <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;text-align: right;"><?=$data['contact_email']?></p>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -258,7 +258,7 @@
                                                 <td width="5%" height="20" align="center" style="text-align: center;background: #FFF;height:20px;"></td>
                                             </tr>
 
-                                            <?php foreach ($data['injuries'] as $key => $value) { ?>
+                                            <?php foreach ($injuries as $key => $value) { ?>
                                                
                                            
                                                 <tr>
@@ -268,7 +268,7 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td style="background: #FFF;" width="45%">
-                                                                        <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:400;text-align: left;"><?=$value?></p>
+                                                                        <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:400;text-align: left;"><?=$value['name']?></p>
                                                                     </td>
                                                                     <td style="background: #FFF;" width="45%">
                                                                         <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;text-align: right;"></p>
