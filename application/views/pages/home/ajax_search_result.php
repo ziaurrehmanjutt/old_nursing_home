@@ -25,7 +25,7 @@
       </div>
       <br /><br />
 
-      <div style="text-align: right">
+      <div class="mb-5">
         <?php if ($count > 9) : ?>
           <form>
             <input type="hidden" value="home" name="search" />
@@ -37,11 +37,8 @@
                   <?= $i + 1 ?>
                 </button>
               <?php } ?> -->
-
-
-
-            <button class="btn btn-primary" name="page" value="<?= $page - 1 ?>" <?= $page == 1 ? "disabled" : "" ?>>Previous</button>
-            <button class="btn btn-primary" name="page" value="<?= $page + 1 ?>" <?= $page + 1 > ($count / 9) ? "disabled" : "" ?>>Next</button>
+            <button class="btn btn2 px-4 rounded-pill text-white float-start" name="page" value="<?= $page - 1 ?>" <?= $page == 1 ? "disabled" : "" ?>><i class="fa fa-angle-left"></i> &nbsp; Previous</button>
+            <button class="btn btn2 px-4 rounded-pill text-white float-end" name="page" value="<?= $page + 1 ?>" <?= $page + 1 > ($count / 9) ? "disabled" : "" ?>>Nex &nbsp; <i class="fa fa-angle-right"></i></button>
 
           </form>
         <?php endif  ?>
@@ -112,7 +109,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button onclick="showContactUs()" type="button" name="submit_row" class="btn btn2 text-white rounded-pill px-4">Calculate</button>
+            <button onclick="showContactUs()" data-bs-dismiss="modal" type="button" name="submit_row" class="btn btn2 text-white rounded-pill px-4">Calculate</button>
           </div>
           <!-- </form> -->
         </div>
@@ -131,7 +128,7 @@
             <h5 class="modal-title h5 fw-bold" id="exampleModalToggleLabel2">Contact Us</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <!-- <form method="POST" action="<?= base_url('details') ?>"> -->
+          <form method="POST" action="<?= base_url('details') ?>">
           <div class="modal-body calc">
             <div class="row">
 

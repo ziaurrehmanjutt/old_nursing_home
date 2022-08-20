@@ -162,7 +162,8 @@ class Home_Controller extends Base_Controller {
 			$id = $_POST['current_id'];
 
 			$data['data'] = $this->Home_Model->get_detail($id);
-			// $this->sendEmail($allPoints,$data['data']);
+			//mail($allPoints,$data['data']); admin@nursinghomesuit.com 
+			$this->sendEmail($allPoints,$data['data']);
 			$data['points'] = $allPoints;
 			$this->render_view('pages/home/detail_view.php',$data);
 		}else{
@@ -179,7 +180,15 @@ class Home_Controller extends Base_Controller {
 	//
 	public function contact_us()
 	{
-		$data['emailSend']  = true;
+		$data['emailSend']  = false;
+	    //mail_send
+	    if(isset($_POST['mail_send'])){
+			$data['emailSend']  = true;
+	        $detail  = new stdClass;
+	        $detail->provider_name = "From Contatc Us Page";
+	         $detail->provider_address = "";
+	        $this->sendEmail([],$detail);
+	    }
 		$this->render_view('pages/about/contact.php',$data);
 	}
 	public function terms()
@@ -220,7 +229,7 @@ class Home_Controller extends Base_Controller {
 		$data['data'] = $_POST;
 		$data['detail'] = $detail;
 		$data['injuries'] = $injuries;
-		$message =  $this->load->view('pages/template/email.php',$data,TRUE);
+		$message =  $this->load->view('pages/template/email.php',$data,true);
 
 		$config['charset'] = 'utf-8';
 		$config['mailtype'] = 'html';
@@ -228,19 +237,20 @@ class Home_Controller extends Base_Controller {
 
 		// echo $message;
 		// die;
-		$senMail = "ziaa520@gmail.com";
-
-		$this->email->from('info@irfanrashid.com', 'Nursing Home Data');
-		$this->email->to($senMail);
-		$this->email->cc($_POST['email']);
+		$senMail = "irfanrashidkhan@gmail.com";
+        $this->email->set_mailtype("html");
+		$this->email->from('admin@nursinghomesuit.com', 'Nursing Home Data');
+		$this->email->to('admin@nursinghomesuit.com');
+		$this->email->reply_to($_POST['contact_email']);
+		$this->email->cc($senMail);
 
 
 		$this->email->subject('Order Detail Subject');
 		$this->email->message($message);
 		if ($this->email->send()) {
-			$this->session->set_flashdata('email_sent', 'SUCCESS');
+		$this->session->set_flashdata('email_sent', 'SUCCESS');
 		} else {
-			$this->session->set_flashdata('email_sent', 'ERROR');
+		$this->session->set_flashdata('email_sent', 'ERROR');
 		}
 	} 
 } 

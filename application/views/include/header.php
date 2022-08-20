@@ -36,7 +36,7 @@
               <li><a class="dropdown-item py-2 px-3" href="other">-	Other</a></li>
             </ul>
           </li>
-          <li class="nav-item"> <a class="nav-link" href="javascript:;">Case Valuation</a> </li> 
+          <!-- <li class="nav-item"> <a class="nav-link" href="javascript:;">Case Valuation</a> </li>  -->
           <li class="nav-item"> <a class="nav-link" href="javascript:;">Our Blog</a> </li>
           <li class="nav-item"> <a class="nav-link" href="<?=base_url('about-us')?>">About Us</a> </li>
           <li class="nav-item"> <a class="nav-link" href="<?=base_url('contact-us')?>">Contact Us</a> </li> 

@@ -16,12 +16,10 @@
 </section>
 <section class="py-5">
   <div class="container py-4">
-
-    <div class="alert alert-success alert_show" role="alert">
+  <div class="alert alert-success alert_show" role="alert">
       <h4 class="alert-heading">Email Sent!</h4>
       <p>We relieved your email. Our support tram will contact your shortly</p>
     </div>
-
     <div class="row">
       <div class="col-12">
         <div class="table-responsive">
@@ -30,33 +28,36 @@
               <th>Type of Injury</th>
               <th>Low Valuation</th>
               <th>High Valuation</th>
-              <th>Average</th>
+              <!-- <th>Average</th> -->
             </tr>
             <?php
             $allT = 0;
             foreach ($points  as $key => $value) {
-              $mid = ($value['low'] + $value['high']) / 2;
-              $allT += $mid;
+                $mid = ($value['low'] + $value['high']) / 2;
+                $allT += $mid;
             ?>
-              <tr>
-                <td>$
-                  <?= $value['name'] ?></td>
-                <td>$
-                  <?= number_format($value['low']) ?></td>
-                <td>$
-                  <?= number_format($value['high']) ?></td>
-                <td>$
-                  <?= number_format($mid) ?></td>
-              </tr>
+            <tr>
+              <td>
+                <?= $value['name'] ?></td>
+              <td>$
+                <?= number_format($value['low']) ?></td>
+              <td>$
+                <?= number_format($value['high']) ?></td>
+              <!-- <td>$
+                <?= number_format($mid) ?></td> -->
+            </tr>
             <?php } ?>
-            <tr class="bg-secondary">
+            <!-- <tr class="bg-secondary">
               <th class="text-white h5">Total</th>
               <td></td>
               <td></td>
               <th class="text-white h5">$
                 <?= number_format($allT) ?></th>
-            </tr>
+            </tr> -->
           </table>
+        </div>
+        <div class="alert alert-warning mt-4">
+          The valuations presented here come from real cases where there are a lot of unstated factors. Your case’s valuation will differ depending on the facts.
         </div>
       </div>
     </div>

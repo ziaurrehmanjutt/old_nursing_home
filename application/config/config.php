@@ -23,7 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+//
 //https://demos.irfanrashid.com/projects/websites/nursing-home-suits/
+$config['base_url'] = 'https://www.nursinghomesuit.com/';
 $config['base_url'] = 'http://localhost/onh/';
 
 /*

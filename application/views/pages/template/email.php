@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<!-- saved from url=(0064)https://demos.irfanrashid.com/projects/email-templates/email-04/ -->
+
 <html lang="en" style="background:#f3f3f3;font-family: Arial, sans-serfi;line-height:1;margin:0;padding:0;outline:none;">
 
 <head>
@@ -81,7 +80,7 @@
                                             </tr>
                                             <tr>
                                                 <td width="5%" align="center" style="text-align: center;width:5%;"></td>
-                                                <td width="90%" align="center" style="text-align: center;width:90%;"><a href="javascript:;" class="logo"><img src="<?= base_url('assets/theme/images/logol.jpeg') ?>" height="38" alt="Logo"></a></td>
+                                                <td width="90%" align="center" style="text-align: center;width:90%;"><a href="javascript:;" class="logo"><img src="<?= base_url('assets/theme/images/logo.png') ?>" height="38" alt="Logo"></a></td>
                                                 <td width="5%" align="center" style="text-align: center;width:5%;"></td>
                                             </tr>
                                             <tr height="20" style="height: 20px;">
@@ -94,8 +93,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td width="100%" style="width: 100%;background: #142A66;">
-                                    <table width="100%" border="0" bgcolor="#142A66" align="center" cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serfi;line-height:1;margin:0;padding:0;outline:none;width:100%;background:#142A66;">
+                                <td width="100%" style="width: 100%;background: #F2693F;">
+                                    <table width="100%" border="0" bgcolor="#142A66" align="center" cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serfi;line-height:1;margin:0;padding:0;outline:none;width:100%;background:#F2693F;">
                                         <tbody>
                                             <tr>
                                                 <td width="5%" height="40" align="center" style="text-align: center;height:40px;"></td>
@@ -236,7 +235,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td style="background: #FFF;">
-                                                                    <p style="color:#333;font-size:15px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:400;">Injuries </p>
+                                                                    <p style="color:#333;font-size:18px;line-height: 1.3;margin:0;padding:0;font-family: Arial, sans-serif;font-weight:600;">Injuries </p>
                                                                 </td>
                                                             </tr>
                                                         </tbody>

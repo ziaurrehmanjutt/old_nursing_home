@@ -76,6 +76,12 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+	// 'username' => 'nursing_home_user', //  
+	// 'password' => '@@@Nursing123', // 
+
+	// 'username' => 'root', //  irfanras_nursing_home
+	// 'password' => '', // Yc?SCUBK?r3v
+
 	'username' => 'root', //  irfanras_nursing_home
 	'password' => '', // Yc?SCUBK?r3v
 	'database' => 'old_nursing_home', 

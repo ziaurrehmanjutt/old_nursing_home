@@ -19,8 +19,23 @@
     }
     ?>
   <div class="row">
+    <div class="col-12">
+    <?php if ($pType == 'danger') : ?>
+      <div class="alert alert-danger d-flex align-items-center line-height1" role="alert"> <i class="fa fa-exclamation-triangle bi flex-shrink-0 me-3 fa-2x" aria-label="Danger:"></i>
+        <div>This nursing home frequently fails to live up to the minimum standards set forth by the state and federal governments. It is likely that this home suffers from poor staffing, poor morale, and poor medical record documentation. These types of homes frequently commit negligent and grossly negligent acts resulting in the death of residents.</div>
+      </div>
+      <?php elseif ($pType == 'warning') : ?>
+      <div class="alert alert-warning d-flex align-items-center line-height1" role="alert"> <i class="fa fa-exclamation-triangle bi flex-shrink-0 me-3 fa-2x" aria-label="Danger:"></i>
+        <div>This nursing home struggles to meet the minimum standards required by regulators. These types of nursing homes frequently commit negligence and it is likely that there is poor documentation that the staff properly cared for you or your loved one.</div>
+      </div>
+      <?php else : ?>
+      <div class="alert alert-success d-flex align-items-center line-height1" role="alert"> <i class="fa fa-check-circle bi flex-shrink-0 me-3 fa-2x" aria-label="Danger:"></i>
+        <div>This nursing home typically does well on its government inspections. This suggests that the nursing home is adequately financed and is able to accommodate the regulatory requirements imposed by state and federal regulators.</div>
+      </div>
+      <?php endif; ?>
+    </div>
     <div class="col-lg-3 col-md-6">
-      <div class="rounded-3 p-4 ratings-box my-3"> <strong>Overall Ratting <small>(
+      <div class="rounded-3 p-4 ratings-box my-3"> <strong>Overall Rating <small>(
         <?=$overAll?>
         )</small></strong>
         <div class="clearfix my-2"></div>
@@ -64,7 +79,7 @@
       </div>
     </div>
     <div class="col-lg-3 col-md-6">
-      <div class="rounded-3 p-4 ratings-box my-3"> <strong>Health inspections <small>(
+      <div class="rounded-3 p-4 ratings-box my-3"> <strong>Health Inspections <small>(
         <?=$healthInspection?>
         )</small></strong>
         <div class="clearfix my-2"></div>
@@ -152,7 +167,7 @@
       </div>
     </div>
     <div class="col-lg-3 col-md-6">
-      <div class="rounded-3 p-4 ratings-box my-3"> <strong>Quality measures <small>(
+      <div class="rounded-3 p-4 ratings-box my-3"> <strong>Quality Measures <small>(
         <?=$qm_ratting?>
         )</small></strong>
         <div class="clearfix my-2"></div>
@@ -200,23 +215,9 @@
         <div class="progress-bar progress-bar-striped progress-bar-animated bg-<?= $pType ?>" role="progressbar" aria-valuenow="<?= $totalRatings * 5 ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $totalRatings * 5 ?>%"></div>
       </div>
       <div class="clearfix mb-4"></div>
-      <br />
-      <?php if ($pType == 'danger') : ?>
-      <div class="alert alert-danger d-flex align-items-center line-height1" role="alert"> <i class="fa fa-exclamation-triangle bi flex-shrink-0 me-3 fa-2x" aria-label="Danger:"></i>
-        <div>This nursing home frequently fails to live up to the minimum standards set forth by the state and federal governments. It is likely that this home suffers from poor staffing, poor morale, and poor medical record documentation. These types of homes frequently commit negligent and grossly negligent acts resulting in the death of residents.</div>
-      </div>
-      <?php elseif ($pType == 'warning') : ?>
-      <div class="alert alert-warning d-flex align-items-center line-height1" role="alert"> <i class="fa fa-exclamation-triangle bi flex-shrink-0 me-3 fa-2x" aria-label="Danger:"></i>
-        <div>This nursing home struggles to meet the minimum standards required by regulators. These types of nursing homes frequently commit negligence and it is likely that there is poor documentation that the staff properly cared for you or your loved one.</div>
-      </div>
-      <?php else : ?>
-      <div class="alert alert-success d-flex align-items-center line-height1" role="alert"> <i class="fa fa-check-circle bi flex-shrink-0 me-3 fa-2x" aria-label="Danger:"></i>
-        <div>This nursing home typically does well on its government inspections. This suggests that the nursing home is adequately financed and is able to accommodate the regulatory requirements imposed by state and federal regulators.</div>
-      </div>
-      <?php endif; ?>
     </div>
   </div>
-  <div class="row d-flex align-items-stretch">
+  <!-- <div class="row d-flex align-items-stretch">
     <div class="col-lg-3 colmd-6 my-4">
       <div class="px-4 py-5 rounded-3 percent-box text-white text-center h-100"> <i class="fas fa-hand-holding-medical fa-2x mb-2"></i>
         <div class="clearfix"></div>
@@ -285,7 +286,7 @@
         </table>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <div class="modal-footer">
   <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" class="btn btn2 text-white mx-auto btn-sm px-4 py-2 my-3 rounded-pill text-uppercase">Tell us what kind of injury the nursing home caused for a valuation</button>
