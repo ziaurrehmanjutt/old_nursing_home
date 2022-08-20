@@ -45,3 +45,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<script>
+  // $('.alert_show').alert('show');
+  setTimeout(() => {
+      $('.alert_show').alert('close');
+  }, 5000);
+</script>

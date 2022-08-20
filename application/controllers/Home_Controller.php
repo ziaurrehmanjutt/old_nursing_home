@@ -179,7 +179,8 @@ class Home_Controller extends Base_Controller {
 	//
 	public function contact_us()
 	{
-		$this->render_view('pages/about/contact.php');
+		$data['emailSend']  = true;
+		$this->render_view('pages/about/contact.php',$data);
 	}
 	public function terms()
 	{

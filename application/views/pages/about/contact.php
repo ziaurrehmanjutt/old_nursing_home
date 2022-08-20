@@ -4,13 +4,21 @@
       <div class="col-lg-3 col-md-1"></div>
       <div class="col-lg-6 col-md-10 text-center text-white">
         <h1 class="h1 fw-bold animate__animated animate__fadeInDown mb-3">Contact Us</h1>
-        <a href="index.php" class="text-white fw-bold animate__animated animate__fadeInUp">Home</a> <small class="text-white animate__animated animate__fadeInUp"> / </small> <span class="animate__animated animate__fadeInUp">Contact Us</span> </div>
+        <a href="index.php" class="text-white fw-bold animate__animated animate__fadeInUp">Home</a> <small class="text-white animate__animated animate__fadeInUp"> / </small> <span class="animate__animated animate__fadeInUp">Contact Us</span>
+      </div>
       <div class="col-lg-3 col-md-1"></div>
     </div>
   </div>
 </section>
 <section class="about py-md-5">
   <div class="container py-5">
+
+  <?php if($emailSend):?>
+    <div class="alert alert-success alert_show" role="alert">
+      <h4 class="alert-heading">Email Sent!</h4>
+      <p>We relieved your email. Our support tram will contact your shortly</p>
+    </div>
+  <?php endif; ?>
     <div class="row align-items-center">
       <div class="col-12 animate__animated animate__fadeInDown text-center">
         <h3 class="h3 fw-bold mb-3">Contact Us</h3>
